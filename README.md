@@ -1,1 +1,1 @@
-# automate-project-blog
+# project-blog
