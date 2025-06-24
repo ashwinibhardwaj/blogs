@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashwini's Project Blogs</title>
+  <link rel="icon" href="images/favicon.ico" type="image/ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    @layer utilities {
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+    }
+
+    /* Smooth Card Hover Effect */
+    .blog-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 relative min-h-screen flex flex-col">
+
+  <!-- Particles Background -->
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <!-- Sticky Navigation -->
+  <nav class="bg-white bg-opacity-80 backdrop-blur sticky top-0 z-50 flex justify-between items-center px-6 py-3 shadow-md border-b">
+    <a href="index.html" class="text-teal-600 font-bold text-lg hover:underline">Ashwini's Blogs</a>
+    <div class="flex items-center space-x-4 text-gray-600">
+      <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" aria-label="LinkedIn" class="hover:text-teal-600 transition">
+        <i class="fab fa-linkedin text-xl"></i>
+      </a>
+      <a href="https://github.com/ashwinibhardwaj" target="_blank" aria-label="GitHub" class="hover:text-teal-600 transition">
+        <i class="fab fa-github text-xl"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-16 px-4">
+    <h2 class="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-teal-400 via-teal-500 to-teal-500 text-transparent bg-clip-text animate-float h-20 -mb-10">
+      Ashwini's Project Blog Space
+    </h2>
+    <p class="mt-6 text-gray-600 text-base sm:text-lg max-w-1xl mx-auto">
+      Discover my journey of building, exploring, and learning in Data Science, Machine Learning, and more.
+    </p>
+  </header>
+
+  <!-- Blog Cards -->
+  <main class="flex-grow px-4 py-10 max-w-7xl mx-auto">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Blog Cards Example -->
+        <a href="posts/datahelp_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+            <img src="images/datahelp.jpeg" alt="DataHelp.AI" class="rounded-lg mb-4 h-48 object-cover hover:scale-105 transition-transform duration-500">
+            <h2 class="text-2xl font-semibold mb-2 text-teal-600">DataHelp.AI: Conversational Data Tool</h2>
+            <p class="text-gray-700 text-sm mb-4">Chat with your datasets in natural language and get instant insights, preprocessing tips, and summaries effortlessly.</p>
+            <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+        </a>
+
+        <a href="posts/automate_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+        <img src="https://h2o.ai/platform/h2o-automl/_jcr_content/root/container/section_1366565710/par/advancedcolumncontro/columns0/image.coreimg.png/1678211341158/h2o-automl.png" alt="Rentify" class="rounded-lg mb-4 h-48 object-cover">
+        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Exploring Data Science and Machine Learning.A Beginner’s Journey with AutoMate</h2>
+        <p class="text-gray-700 text-sm mb-4">A full pipeline tool for dataset preprocessing, model training, evaluation, and export. Inspired by real-world data challenges faced in ML workflows.</p>
+        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+      </a>
+
+      <a href="posts/stock_trend_prediction_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+        <img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2023/11/Screenshot-2023-10-26-at-7.20.37-PM-600x360.png" alt="Stock Trend Prediction" class="rounded-lg mb-4 h-48 object-cover">
+        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Stock Trend Prediction</h2>
+        <p class="text-gray-700 text-sm mb-4">LSTM-based stock forecasting with Streamlit integration and interactive plots.</p>
+        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+      </a>
+
+      
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white bg-opacity-80 border-t text-gray-600 py-4 text-center text-sm">
+    Crafted with ❤️ by <strong class="text-gray-800">Ashwini Bhardwaj</strong> |
+    <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600">LinkedIn</a> |
+    <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600">GitHub</a>
+  </footer>
+
+  <!-- Particles.js Config -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#76c7c0" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 8, "random": true },
+        "move": { "direction": "top", "speed": 1, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+
+</body>
+
+</html>
