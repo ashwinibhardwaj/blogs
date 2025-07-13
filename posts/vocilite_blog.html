@@ -4,20 +4,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocilite — Simple Text Explanations with Voice | Ashwini's Blogs</title>
-  <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
-  <link rel="shortcut icon" href="../images/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
-  <link rel="manifest" href="../images/site.webmanifest" />
+  <title>Ashwini's Project Blogs</title>
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  <link rel="icon" href="images/favicon.ico" type="image/ico">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    @layer utilities {
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+    }
+
+    /* Smooth Card Hover Effect */
+    .blog-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      transition: transform 0.5s, box-shadow 0.5s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col font-sans">
+<body class="bg-gray-100 text-gray-800 relative min-h-screen flex flex-col">
 
-  <!-- Sticky Navbar -->
-  <nav class="bg-white sticky top-0 z-50 flex justify-between items-center px-6 py-4 shadow-md border-b">
-    <a href="../index.html" class="text-teal-600 font-bold text-lg hover:underline">← Back to Blogs</a>
+  <!-- Particles Background -->
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <!-- Sticky Navigation -->
+  <nav class="bg-white bg-opacity-80 backdrop-blur sticky top-0 z-50 flex justify-between items-center px-6 py-3 shadow-md border-b">
+    <a href="index.html" class="text-teal-600 font-bold text-lg hover:underline">Ashwini's Blogs</a>
     <div class="flex items-center space-x-4 text-gray-600">
       <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" aria-label="LinkedIn" class="hover:text-teal-600 transition">
         <i class="fab fa-linkedin text-xl"></i>
@@ -28,122 +56,81 @@
     </div>
   </nav>
 
-  <!-- Blog Content -->
-  <main class="flex-grow px-4 py-10 max-w-4xl mx-auto">
+  <!-- Header -->
+  <header class="text-center py-16 px-4">
+    <h2 class="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-teal-400 via-teal-500 to-teal-500 text-transparent bg-clip-text animate-float h-20 -mb-10">
+      Ashwini's Project Blog Space
+    </h2>
+    <p class="mt-6 text-gray-600 text-base sm:text-lg max-w-1xl mx-auto">
+      Discover my journey of building, exploring, and learning in Data Science, Machine Learning, and more.
+    </p>
+  </header>
 
-    <!-- Card-like Blog Container -->
-    <div class="bg-white shadow-lg rounded-2xl p-6 sm:p-10 leading-relaxed">
+  <!-- Blog Cards -->
+  <main class="flex-grow px-4 py-10 max-w-7xl mx-auto">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-teal-600 text-left">Vocilite: Simple Text Explanations with Voice</h1>
-      <p class="text-gray-500 text-sm mb-8 text-left">Posted on: July 13, 2025</p>
+      <!-- Blog Cards Example -->
+        <a href="posts/vocilite_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+          <img src="images/vocilite_banner.jpg" alt="Vocilite" class="rounded-lg mb-4 h-48 object-cover hover:scale-105 transition-transform duration-500">
+          <h2 class="text-2xl font-semibold mb-2 text-teal-600">Vocilite: Simple Text Explanations with Voice</h2>
+          <p class="text-gray-700 text-sm mb-4">
+            Highlight any text on a website and let Vocilite explain it simply — plus hear it aloud in natural voices, making complex reading effortless.
+          </p>
+          <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+        </a>
 
-      <!-- Banner Section -->
-      <div class="w-full overflow-hidden rounded-lg mb-8 aspect-[3/1] sm:aspect-[4/1] lg:aspect-[5/1]">
-        <img src="../images/vocilite_banner.jpg" alt="Vocilite Banner" class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105">
-      </div>
+        <a href="posts/datahelp_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+            <img src="images/datahelp.jpeg" alt="DataHelp.AI" class="rounded-lg mb-4 h-48 object-cover hover:scale-105 transition-transform duration-500">
+            <h2 class="text-2xl font-semibold mb-2 text-teal-600">DataHelp.AI: Conversational Data Tool</h2>
+            <p class="text-gray-700 text-sm mb-4">Chat with your datasets in natural language and get instant insights, preprocessing tips, and summaries effortlessly.</p>
+            <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+        </a>
 
-      <!-- Introduction -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">My Story Behind Vocilite</h2>
-        <p class="mb-4 text-justify">A few weekends ago, I found myself struggling through a dense article filled with technical jargon. Every couple of sentences, I’d pause, open a new tab, and Google terms just to keep up. That’s when it hit me: there has to be a simpler way to instantly understand complex text without breaking focus.</p>
-        <p class="mb-4 text-justify">That moment sparked the idea for <strong>Vocilite</strong> — a tool designed to help anyone highlight text on any webpage and get a clear, simple explanation right there. And not just visually, but spoken out loud in a natural voice, making it more accessible for all kinds of users.</p>
-        <p class="mb-4 text-justify">Vocilite isn’t live yet, but I’ve been building it piece by piece. You can check out the progress and the code on GitHub: <a href="https://github.com/ashwinibhardwaj/TextExplainer.AI" target="_blank" class="text-teal-600 hover:underline font-semibold">Vocilite GitHub Repository</a>.</p>
-      </section>
+        <a href="posts/automate_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+        <img src="https://h2o.ai/platform/h2o-automl/_jcr_content/root/container/section_1366565710/par/advancedcolumncontro/columns0/image.coreimg.png/1678211341158/h2o-automl.png" alt="Rentify" class="rounded-lg mb-4 h-48 object-cover">
+        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Exploring Data Science and Machine Learning.A Beginner’s Journey with AutoMate</h2>
+        <p class="text-gray-700 text-sm mb-4">A full pipeline tool for dataset preprocessing, model training, evaluation, and export. Inspired by real-world data challenges faced in ML workflows.</p>
+        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+      </a>
 
-      <!-- Problem -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">The Problem I Wanted to Solve</h2>
-        <p class="mb-4 text-justify">The internet is full of complex articles, research papers, and technical blogs that can be overwhelming. I wanted to solve a few key challenges:</p>
-        <ul class="list-disc list-inside space-y-2 mb-4 ml-4 text-left">
-          <li>Understanding tricky terms or sentences instantly, without switching tabs or losing context.</li>
-          <li>Providing explanations in plain, human language rather than dictionary definitions.</li>
-          <li>Offering audio playback of explanations for people who prefer listening or are multitasking.</li>
-        </ul>
-        <p class="mb-4 text-justify">My goal was to make understanding text as smooth and fast as possible — whether for students, professionals, or everyday readers.</p>
-      </section>
+      <a href="posts/stock_trend_prediction_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
+        <img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2023/11/Screenshot-2023-10-26-at-7.20.37-PM-600x360.png" alt="Stock Trend Prediction" class="rounded-lg mb-4 h-48 object-cover">
+        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Stock Trend Prediction</h2>
+        <p class="text-gray-700 text-sm mb-4">LSTM-based stock forecasting with Streamlit integration and interactive plots.</p>
+        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+      </a>
 
-      <!-- Solution -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">My Solution: Vocilite</h2>
-        <p class="mb-4 text-justify"><strong>Vocilite</strong> is a Chrome extension (still in development) that lets you highlight any text on a webpage and get a simple, conversational explanation powered by AI. It doesn’t stop there — Vocilite can also read the explanation aloud in clear, natural-sounding voices, including options for Indian English accents for better local understanding.</p>
+      
 
-        <ul class="list-disc list-inside space-y-2 mb-4 ml-4 text-left">
-          <li><strong>Highlight and Explain:</strong> Select any text and click “Explain” in the extension panel.</li>
-          <li><strong>Plain English Explanations:</strong> The AI generates concise, easy-to-grasp explanations without jargon.</li>
-          <li><strong>Text-to-Speech:</strong> Listen to explanations spoken aloud for greater accessibility.</li>
-          <li><strong>AI-Powered:</strong> Built using LangChain, Groq’s LLaMA 3, and a Flask backend for fast responses.</li>
-          <li><strong>Clean Audio Output:</strong> Vocilite cleans AI text so your voice assistant doesn’t read out symbols or formatting.</li>
-        </ul>
-      </section>
-
-      <!-- Workflow -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">How It Works</h2>
-        <ol class="list-decimal list-inside space-y-2 mb-4 ml-4 text-left">
-          <li><strong>Step 1:</strong> Install the Vocilite Chrome extension (coming soon!).</li>
-          <li><strong>Step 2:</strong> Highlight any text you’d like explained.</li>
-          <li><strong>Step 3:</strong> Click the “Explain” button in Vocilite’s floating panel.</li>
-          <li><strong>Step 4:</strong> See a simple explanation on screen — or listen to it read aloud instantly.</li>
-        </ol>
-      </section>
-
-      <!-- Challenges -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">Challenges I Faced</h2>
-        <ul class="list-disc list-inside space-y-2 mb-4 ml-4 text-left">
-          <li>Cleaning AI-generated responses to avoid awkward symbols being spoken aloud.</li>
-          <li>Finding high-quality voices for different accents, especially Indian English.</li>
-          <li>Balancing short explanations with enough detail to be genuinely helpful.</li>
-          <li>Designing a UI that feels lightweight and blends seamlessly with web browsing.</li>
-        </ul>
-      </section>
-
-      <!-- Key Learnings -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">What I Learned</h2>
-        <ul class="list-disc list-inside space-y-2 mb-4 ml-4 text-left">
-          <li>Integrating LangChain and Groq’s LLaMA 3 to build real-time, user-friendly tools.</li>
-          <li>Building Chrome extensions and managing complex DOM manipulations elegantly.</li>
-          <li>Cleaning and preprocessing AI text for a better speech synthesis experience.</li>
-          <li>Creating tools that bring AI closer to everyday use and improve accessibility.</li>
-        </ul>
-      </section>
-
-      <!-- Try It Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">Follow the Project</h2>
-        <p class="mb-4 text-justify">
-          <strong>Vocilite</strong> isn’t live yet, but I’m excited to keep improving it. If you’d like to check out how it’s built or contribute, have a look at the GitHub repo:
-        </p>
-
-        <ul class="list-disc list-inside space-y-2 mb-4 ml-4 text-left">
-          <li><strong>Source Code:</strong> <a href="https://github.com/ashwinibhardwaj/TextExplainer_Vocilite" target="_blank" class="text-teal-600 hover:underline font-semibold">View on GitHub</a></li>
-        </ul>
-
-        <p class="mb-4 text-justify">Feel free to star the repo, share feedback, or reach out if you’d like to collaborate. Let’s make the web easier to understand together!</p>
-      </section>
-
-      <!-- Conclusion -->
-      <section class="mb-4">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-teal-600 text-left">Final Thoughts</h2>
-        <p class="mb-4 text-justify">Working on <strong>Vocilite</strong> has been an eye-opening journey into how much simpler technology can make learning and understanding. I’m excited to keep developing it, adding support for more languages, and refining its voice capabilities.</p>
-        <p class="text-justify">Thanks for reading, and I hope you’ll follow along as I bring Vocilite to life!</p>
-      </section>
-
-      <!-- Navigation -->
-      <div class="flex justify-between mt-10 text-sm">
-        <a href="../index.html" class="text-teal-600 hover:underline">← Back to Blog List</a>
-      </div>
-
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white border-t text-gray-500 py-4 text-center text-sm">
-    Crafted with ❤️ by <strong class="text-gray-700">Ashwini Bhardwaj</strong> |
+  <footer class="bg-white bg-opacity-80 border-t text-gray-600 py-4 text-center text-sm">
+    Crafted with ❤️ by <strong class="text-gray-800">Ashwini Bhardwaj</strong> |
     <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600">LinkedIn</a> |
     <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600">GitHub</a>
   </footer>
+
+  <!-- Particles.js Config -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#76c7c0" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 8, "random": true },
+        "move": { "direction": "top", "speed": 1, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
+      },
+      "retina_detect": true
+    });
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
 
