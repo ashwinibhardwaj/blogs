@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI SQL Assistant – Turning Natural Language into SQL</title>
+
+  <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="shortcut icon" href="../images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+  <link rel="manifest" href="../images/site.webmanifest" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background-color: #fafafa; color: #1a1a1a; line-height: 1.75; }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .arrow-icon { transform: rotate(90deg); }
+    pre { background-color: #f5f5f5; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+  </style>
+</head>
+
+<body class="antialiased bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-5 py-4 flex flex-col sm:flex-row justify-between items-center">
+      <a href="../index.html" class="text-lg font-semibold text-gray-900 hover:text-teal-600 transition mb-2 sm:mb-0">
+        ← Back to Blogs
+      </a>
+      <div class="flex items-center gap-4 text-gray-600">
+        <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600 transition">
+          <i class="fab fa-linkedin text-lg"></i>
+        </a>
+        <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600 transition">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-3xl mx-auto px-6 py-10">
+    <article class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 sm:p-8">
+
+      <!-- Blog Header -->
+      <header class="mb-8 text-left">
+        <h1 class="text-3xl sm:text-4xs font-bold text-teal-800 mb-3">
+            Building the AI SQL Assistant: From Natural Language to SQL Instantly
+        </h1>
+        <p class="text-teal-600 font-medium mb-3">
+          A journey into creating an intelligent SQL assistant using LLMs and LangChain
+        </p>
+        <p class="text-gray-500 text-sm">November 2025</p>
+        
+      </header>
+
+      <!-- Introduction -->
+      <section class="mb-10 text-[15px] leading-relaxed text-gray-700">
+        <p class="mb-4 text-justify">
+          Have you ever wanted to interact with a database without writing a single line of SQL? That’s exactly what inspired the <strong>AI SQL Assistant</strong>. The idea was simple yet ambitious: allow users to type plain English queries, convert them into SQL, execute them, and return results instantly. 
+        </p>
+        <p class="mb-4 text-justify">
+          Leveraging the power of <strong>Hugging Face LLMs</strong> and <strong>LangChain</strong>, this project transforms natural language into executable queries and even handles errors autonomously. It’s a tool for data analysts, developers, and AI enthusiasts who want to explore databases effortlessly.
+        </p>
+      </section>
+
+      <!-- The Story Behind the Project -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">📖 The Journey</h2>
+        <p class="mb-4 text-gray-700 text-[15px] text-justify">
+          Spending hours writing and debugging SQL queries for simple data insights. The idea of using a large language model to generate queries dynamically seemed like the perfect solution. Over time, this idea evolved into a full-fledged assistant that not only generates queries but executes them safely on temporary databases and visualizes the results interactively.
+        </p>
+        <p class="text-gray-700 text-[15px] text-justify">
+          Along the way, I learned how to combine multiple tools — Flask for web deployment, MySQL for dynamic execution, and LangChain to manage agentic workflows — into a cohesive, user-friendly application.
+        </p>
+      </section>
+
+      <!-- How It Works -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">💻 How It Works</h2>
+        <p class="mb-4 text-gray-700 text-[15px] text-justify">
+          The AI SQL Assistant follows a simple flow:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4 text-gray-700 text-[15px]">
+          <li><strong>Upload:</strong> Users upload a <code>.sql</code> database dump to create a temporary database.</li>
+          <li><strong>Ask:</strong> Enter questions in natural language like “List the top 5 customers by revenue.”</li>
+          <li><strong>Generate:</strong> The AI generates a precise SQL query.</li>
+          <li><strong>Execute:</strong> Queries run instantly and return results.</li>
+          <li><strong>Refine:</strong> Errors? The AI automatically corrects them and retries.</li>
+          <li><strong>Visualize:</strong> Interactive, user-friendly tables and charts display the results.</li>
+        </ul>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">⚙️ Tech Stack</h2>
+        <p class="mb-3 text-gray-700 text-[15px] text-justify">
+          This project combines modern web technologies, AI tools, and database management:
+        </p>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-[15px] text-gray-700 leading-relaxed">
+          <ul class="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Python (Flask):</strong> Web framework for the backend</li>
+            <li><strong>LangChain / LangGraph:</strong> Agentic reasoning and workflow orchestration</li>
+            <li><strong>Hugging Face LLM:</strong> Understanding natural language and generating SQL</li>
+            <li><strong>MySQL:</strong> Executes queries dynamically on uploaded SQL dumps</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Setup & Installation -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">🚀 Setup & Installation</h2>
+        <p class="mb-4 text-gray-700 text-[15px] text-justify">
+          Getting started is simple. Clone the repo, set up your environment, and you’re ready to explore your data:
+        </p>
+
+        <details class="bg-gray-50 border border-gray-200 rounded-lg shadow-inner p-4">
+          <summary class="font-semibold text-teal-700 flex items-center cursor-pointer">
+            <svg class="w-5 h-5 mr-2 arrow-icon transform transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Show Setup Instructions
+          </summary>
+          <div class="mt-4 border-t border-gray-200 pt-4">
+            <pre class="rounded-lg text-sm p-4 whitespace-pre-wrap break-words bg-gray-100 text-gray-800"><code>
+# 1. Clone the repo
+git clone https://github.com/ashwinibhardwaj/AI-SQL-ASSISTANT.git
+cd AI-SQL-ASSISTANT
+
+# 2. Create virtual environment
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Create .env file
+FLASK_APP=app.py
+HUGGINGFACEHUB_ACCESS_TOCKEN=your_huggingface_api_key
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=yourpassword
+MYSQL_PORT=3306
+
+# 5. Run the app
+python app.py
+
+# 6. Visit
+👉 http://127.0.0.1:5000
+            </code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Key Learnings & Insights -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">💡 Learnings & Insights</h2>
+        <p class="mb-4 text-gray-700 text-[15px] text-justify">
+          Working on this project taught me valuable lessons:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4 text-gray-700 text-[15px]">
+          <li>How to orchestrate LLM-based workflows using LangChain and LangGraph.</li>
+          <li>Integrating AI-generated code with a live MySQL database safely.</li>
+          <li>Building a user-friendly conversational interface for technical applications.</li>
+          <li>Automatic error handling and SQL correction using AI agents.</li>
+          <li>Deploying AI tools in a web application for real-time interactive results.</li>
+        </ul>
+      </section>
+
+      <!-- GitHub & Resources -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">📂 GitHub & Resources</h2>
+        <p class="mb-4 text-gray-700 text-[15px] text-justify">
+          If you want to explore the source code, contribute, or try it out yourself, the project is available on GitHub:
+        </p>
+        <a href="https://github.com/ashwinibhardwaj/AI-SQL-ASSISTANT" target="_blank" class="text-blue-600 hover:underline text-[15px]">AI SQL Assistant on GitHub</a>
+      </section>
+
+      <div class="mt-8 text-right text-sm">
+        <a href="../index.html" class="text-blue-600 hover:underline">← Back to Blog List</a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-600">
+    <p>
+      <strong class="text-gray-800"> 
+        <a href="https://ashwinibhardwaj.github.io/portfolio/" target="_blank" class="hover:text-teal-600">
+            Ashwini Bhardwaj</a></strong> |
+      <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600">LinkedIn</a> |
+      <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>
