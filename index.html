@@ -1,139 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ashwini's Project Blogs</title>
-  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-  <link rel="shortcut icon" href="images/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-  <link rel="manifest" href="images/site.webmanifest" />
+
   <link rel="icon" href="images/favicon.ico" type="image/ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    @layer utilities {
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-      .animate-float {
-        animation: float 4s ease-in-out infinite;
-      }
+    * {
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Smooth Card Hover Effect */
+    body {
+      background-color: #f9fafb;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
     .blog-card {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(15px);
-      transition: transform 0.5s, box-shadow 0.5s;
+      transition: all 0.25s ease;
     }
 
     .blog-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      border-color: #5eead4;
+    }
+
+    .blog-card img {
+      height: 140px;
+      object-fit: cover;
+      transition: opacity 0.25s ease;
+    }
+
+    .blog-card:hover img {
+      opacity: 0.9;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #99f6e4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2dd4bf;
     }
   </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800 relative min-h-screen flex flex-col">
+<body class="antialiased">
 
-  <!-- Particles Background -->
-  <div id="particles-js" class="absolute inset-0 -z-10"></div>
-
-  <!-- Sticky Navigation -->
-  <nav class="bg-white bg-opacity-80 backdrop-blur sticky top-0 z-50 flex justify-between items-center px-6 py-3 shadow-md border-b">
-    <a href="index.html" class="text-teal-600 font-bold text-lg hover:underline">Ashwini's Blogs</a>
-    <div class="flex items-center space-x-4 text-gray-600">
-      <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" aria-label="LinkedIn" class="hover:text-teal-600 transition">
-        <i class="fab fa-linkedin text-xl"></i>
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-teal-200 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-5 py-4 flex justify-between items-center">
+      <a href="https://ashwinibhardwaj.github.io/portfolio/" class="text-lg md:text-xl font-semibold text-teal-700 hover:text-teal-900 transition">
+        Ashwini Bhardwaj
       </a>
-      <a href="https://github.com/ashwinibhardwaj" target="_blank" aria-label="GitHub" class="hover:text-teal-600 transition">
-        <i class="fab fa-github text-xl"></i>
-      </a>
+      <div class="flex items-center gap-4 text-teal-600">
+        <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" aria-label="LinkedIn" class="hover:text-teal-800 transition">
+          <i class="fab fa-linkedin text-lg"></i>
+        </a>
+        <a href="https://github.com/ashwinibhardwaj" target="_blank" aria-label="GitHub" class="hover:text-teal-800 transition">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- Header -->
-  <header class="text-center py-16 px-4">
-    <h2 class="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-teal-400 via-teal-500 to-teal-500 text-transparent bg-clip-text animate-float h-20 -mb-10">
-      Ashwini's Project Blog Space
-    </h2>
-    <p class="mt-6 text-gray-600 text-base sm:text-lg max-w-1xl mx-auto">
-      Discover my journey of building, exploring, and learning in Data Science, Machine Learning, and more.
+<header class="bg-gradient-to-r from-teal-50 via-white to-teal-50 border-b border-teal-200 shadow-sm py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    
+    <!-- Main Title -->
+    <h1 class="text-4xl md:text-5xl font-bold text-teal-800 mb-4 flex items-center justify-center gap-2">
+      <i class="fa-solid fa-laptop-code text-teal-500"></i> Project Blogs
+    </h1>
+    <div class="h-1 w-16 bg-teal-500 rounded mx-auto mb-6"></div>
+
+    <!-- Tagline -->
+    <p class="text-teal-700 text-sm md:text-base mb-6">
+      Documenting my journey through data science and AI projects.
     </p>
-  </header>
+    <div class="bg-white/70 backdrop-blur-sm border border-teal-100 rounded-xl shadow-sm px-5 py-4 max-w-2xl mx-auto">
+      <p class="text-xs sm:text-sm text-gray-700 leading-relaxed mb-2">
+        <span class="font-semibold text-teal-700">AI - ML - Projects</span>
+    </div>
+  </div>
+</header>
 
-  <!-- Blog Cards -->
-  <main class="flex-grow px-4 py-10 max-w-7xl mx-auto">
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <!-- Blog Cards Example -->
-        <a href="posts/vocilite_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
-          <img src="images/vocilite_banner.jpg" alt="Vocilite" class="rounded-lg mb-4 h-48 object-cover hover:scale-105 transition-transform duration-500">
-          <h2 class="text-2xl font-semibold mb-2 text-teal-600">Vocilite: Simple Text Explanations with Voice</h2>
-          <p class="text-gray-700 text-sm mb-4">
-            Highlight any text on a website and let Vocilite explain it simply — plus hear it aloud in natural voices, making complex reading effortless.
+
+  <!-- Blog Section -->
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-6">
+    <article class="blog-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+  <a href="posts/SQL_agent.html" class="sm:w-56 flex-shrink-0">
+    <img src="images/sql_tool.png" alt="AI SQL ASSISTANT" class="w-full h-full">
+  </a>
+  <div class="p-5 flex flex-col justify-between flex-1">
+    <div>
+      <h2 class="text-xl font-semibold text-gray-900 mb-1">
+        AI SQL ASSISTANT: Query Your Database in Plain English
+      </h2>
+      <p class="text-gray-600 text-sm leading-relaxed mb-3">
+        Upload a SQL dump, chat with your data in natural language, and get instant insights with AI-generated SQL queries.
+      </p>
+    </div>
+    <a href="posts/SQL_agent.html" class="text-teal-600 text-sm font-medium hover:text-teal-800 hover:underline mt-auto">
+      Read more →
+    </a>
+  </div>
+</article>
+
+
+    <!-- Blog Card -->
+    <article class="blog-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+      <a href="posts/vocilite_blog.html" class="sm:w-56 flex-shrink-0">
+        <img src="images/vocilite_banner.jpg" alt="Vocilite" class="w-full h-full">
+      </a>
+      <div class="p-5 flex flex-col justify-between flex-1">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-1">
+            Vocilite: Simple Text Explanations with Voice
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            Highlight any text and let Vocilite explain it simply — plus hear it aloud in natural voices.
           </p>
-          <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+        </div>
+        <a href="posts/vocilite_blog.html" class="text-teal-600 text-sm font-medium hover:text-teal-800 hover:underline mt-auto">
+          Read more →
         </a>
+      </div>
+    </article>
 
-        <a href="posts/datahelp_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
-            <img src="images/datahelp.jpeg" alt="DataHelp.AI" class="rounded-lg mb-4 h-48 object-cover hover:scale-105 transition-transform duration-500">
-            <h2 class="text-2xl font-semibold mb-2 text-teal-600">DataHelp.AI: Conversational Data Tool</h2>
-            <p class="text-gray-700 text-sm mb-4">Chat with your datasets in natural language and get instant insights, preprocessing tips, and summaries effortlessly.</p>
-            <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+    <!-- Blog Card -->
+    <article class="blog-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+      <a href="posts/datahelp_blog.html" class="sm:w-56 flex-shrink-0">
+        <img src="images/datahelp.jpeg" alt="DataHelp.AI" class="w-full h-full">
+      </a>
+      <div class="p-5 flex flex-col justify-between flex-1">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-1">
+            DataHelp.AI: Conversational Data Tool
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            Chat with your datasets in natural language and get instant insights with ease.
+          </p>
+        </div>
+        <a href="posts/datahelp_blog.html" class="text-teal-600 text-sm font-medium hover:text-teal-800 hover:underline mt-auto">
+          Read more →
         </a>
+      </div>
+    </article>
 
-        <a href="posts/automate_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
-        <img src="https://h2o.ai/platform/h2o-automl/_jcr_content/root/container/section_1366565710/par/advancedcolumncontro/columns0/image.coreimg.png/1678211341158/h2o-automl.png" alt="Rentify" class="rounded-lg mb-4 h-48 object-cover">
-        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Exploring Data Science and Machine Learning.A Beginner’s Journey with AutoMate</h2>
-        <p class="text-gray-700 text-sm mb-4">A full pipeline tool for dataset preprocessing, model training, evaluation, and export. Inspired by real-world data challenges faced in ML workflows.</p>
-        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+    <!-- Blog Card -->
+    <article class="blog-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+      <a href="posts/automate_blog.html" class="sm:w-56 flex-shrink-0">
+        <img src="https://h2o.ai/platform/h2o-automl/_jcr_content/root/container/section_1366565710/par/advancedcolumncontro/columns0/image.coreimg.png/1678211341158/h2o-automl.png" alt="AutoMate" class="w-full h-full">
       </a>
+      <div class="p-5 flex flex-col justify-between flex-1">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-1">
+            AutoMate: ML Made Effortless
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            End-to-end automation for data preprocessing, model training, and deployment.
+          </p>
+        </div>
+        <a href="posts/automate_blog.html" class="text-teal-600 text-sm font-medium hover:text-teal-800 hover:underline mt-auto">
+          Read more →
+        </a>
+      </div>
+    </article>
 
-      <a href="posts/stock_trend_prediction_blog.html" class="blog-card rounded-2xl p-4 flex flex-col cursor-pointer shadow-lg">
-        <img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2023/11/Screenshot-2023-10-26-at-7.20.37-PM-600x360.png" alt="Stock Trend Prediction" class="rounded-lg mb-4 h-48 object-cover">
-        <h2 class="text-2xl font-semibold mb-2 text-teal-600">Stock Trend Prediction</h2>
-        <p class="text-gray-700 text-sm mb-4">LSTM-based stock forecasting with Streamlit integration and interactive plots.</p>
-        <span class="text-teal-600 font-medium hover:underline">Read Blog →</span>
+    <!-- Blog Card -->
+    <article class="blog-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+      <a href="posts/stock_trend_prediction_blog.html" class="sm:w-56 flex-shrink-0">
+        <img src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2023/11/Screenshot-2023-10-26-at-7.20.37-PM-600x360.png" alt="Stock Trend Prediction" class="w-full h-full">
       </a>
+      <div class="p-5 flex flex-col justify-between flex-1">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-1">
+            Stock Trend Prediction
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            LSTM-powered stock forecasting with interactive Streamlit visualizations.
+          </p>
+        </div>
+        <a href="posts/stock_trend_prediction_blog.html" class="text-teal-600 text-sm font-medium hover:text-teal-800 hover:underline mt-auto">
+          Read more →
+        </a>
+      </div>
+    </article>
 
-      
-
-    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white bg-opacity-80 border-t text-gray-600 py-4 text-center text-sm">
-    Crafted with ❤️ by <strong class="text-gray-800">Ashwini Bhardwaj</strong> |
-    <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600">LinkedIn</a> |
-    <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600">GitHub</a>
+  <footer class="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-600">
+    <p>
+      <strong class="text-gray-800"> 
+        <a href="https://ashwinibhardwaj.github.io/portfolio/" target="_blank" class="hover:text-teal-600">
+            Ashwini Bhardwaj</a></strong> |
+      <a href="https://www.linkedin.com/in/ashwini-bhardwaj/" target="_blank" class="hover:text-teal-600">LinkedIn</a> |
+      <a href="https://github.com/ashwinibhardwaj" target="_blank" class="hover:text-teal-600">GitHub</a>
+    </p>
   </footer>
 
-  <!-- Particles.js Config -->
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#76c7c0" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": true },
-        "size": { "value": 8, "random": true },
-        "move": { "direction": "top", "speed": 1, "out_mode": "out" }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": { "onhover": { "enable": false }, "onclick": { "enable": false } }
-      },
-      "retina_detect": true
-    });
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-
 </body>
-
 </html>
